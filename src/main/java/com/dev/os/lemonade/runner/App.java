@@ -29,7 +29,7 @@ public class App
 	
 	
 	public static void main(String[] args) throws LoginException {
-	    JDABuilder builder = JDABuilder.createDefault("Nzg2ODMwMTI3ODE1NTg5OTM4.X9MGqQ.7dGTeB6i_lCWO-bNwTnfgYZLaTk");
+	    JDABuilder builder = JDABuilder.createDefault("GetYourOwnToken");
 	    
 	    // Disable parts of the cache
 	    builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
