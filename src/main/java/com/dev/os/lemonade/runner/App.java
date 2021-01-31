@@ -1,12 +1,14 @@
 package com.dev.os.lemonade.runner;
 
 import javax.security.auth.login.LoginException;
+
+
 import com.dev.os.lemonade.emotes.HelloEvent;
 import com.dev.os.lemonade.emotes.ImageSend;
 import com.dev.os.lemonade.emotes.MoodEvent;
 import com.dev.os.lemonade.games.CoinFlip;
 import com.dev.os.lemonade.games.DiceRoll;
-import com.dev.os.lemonade.games.RandomWord;
+import com.dev.os.lemonade.games.WordGuess;
 import com.dev.os.lemonade.util.AvatarEvent;
 import com.dev.os.lemonade.util.ClearEvent;
 import com.dev.os.lemonade.util.InfoEvent;
@@ -27,7 +29,7 @@ public class App
 	
 	
 	public static void main(String[] args) throws LoginException {
-	    JDABuilder builder = JDABuilder.createDefault("getYourToken:)");
+	    JDABuilder builder = JDABuilder.createDefault("Nzg2ODMwMTI3ODE1NTg5OTM4.X9MGqQ.7dGTeB6i_lCWO-bNwTnfgYZLaTk");
 	    
 	    // Disable parts of the cache
 	    builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
@@ -44,7 +46,9 @@ public class App
 	    jda.addEventListener(new ImageSend());
 	    jda.addEventListener(new InfoEvent());
 	    jda.addEventListener(new CoinFlip());
-	    jda.addEventListener(new RandomWord());
 	    jda.addEventListener(new DiceRoll());
+	    jda.addEventListener(new WordGuess());
 	}
+	
+	
 }
