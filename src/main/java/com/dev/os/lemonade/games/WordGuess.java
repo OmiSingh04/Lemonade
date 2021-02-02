@@ -23,7 +23,7 @@ public class WordGuess extends ListenerAdapter{
 	private String word = new String("");
 	private TextChannel channel;
 	private int chances= 5;
-	
+	//these represent the state of the game, i think what im doing here is called state machine
 	
 	
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
