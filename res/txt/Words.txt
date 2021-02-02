@@ -1,4 +1,3 @@
-start:
 information
 available
 copyright
