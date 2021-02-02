@@ -73,10 +73,9 @@ public class WordGuess extends ListenerAdapter{
 					
 				}
 				if(check) {
-					chances++;
 					event.getChannel().sendMessage(guess).queue();
 				}
-				if(!check) {
+				else {
 					chances--;
 					event.getChannel().sendMessage("Didnt match :sob:").queue();
 					if(chances > 0)
@@ -89,7 +88,7 @@ public class WordGuess extends ListenerAdapter{
 				memberID = -1;
 				guess = "";
 				event.getChannel().sendMessage("Aww :sob: No more chances :pensive:").queue();
-				event.getChannel().sendMessage("Word was " + word).queue();
+				event.getChannel().sendMessage("Word was \"" + word + "\"").queue();
 				chances = 5;
 				word = guess = "";
 			}
