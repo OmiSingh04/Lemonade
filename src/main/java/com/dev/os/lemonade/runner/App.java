@@ -2,7 +2,8 @@ package com.dev.os.lemonade.runner;
 
 import javax.security.auth.login.LoginException;
 
-
+import com.dev.os.lemonade.db_manager.BotQueries;
+import com.dev.os.lemonade.db_manager.DatabaseEvents;
 import com.dev.os.lemonade.emotes.HelloEvent;
 import com.dev.os.lemonade.emotes.ImageSend;
 import com.dev.os.lemonade.emotes.MoodEvent;
@@ -18,18 +19,14 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.utils.Compression;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
 	
 	public static final String SERVER_PREFIX = "LM.";
-	
+	public static BotQueries BOT_QUERIES;
 	
 	public static void main(String[] args) throws LoginException {
-	    JDABuilder builder = JDABuilder.createDefault("GetYourOwnToken");
+	    JDABuilder builder = JDABuilder.createDefault("GetYourOwnToken :)");
 	    
 	    // Disable parts of the cache
 	    builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
@@ -39,6 +36,7 @@ public class App
 	    builder.setCompression(Compression.NONE);
 	    //builder.setStatus(OnlineStatus.IDLE).setActivity(Activity.watching("your winstreaks..."));
 	    JDA jda = builder.build();
+	    BOT_QUERIES = new BotQueries("connectionURL", "user", "password");
 	    jda.addEventListener(new HelloEvent());
 	    jda.addEventListener(new MoodEvent());
 	    jda.addEventListener(new AvatarEvent());
@@ -48,6 +46,7 @@ public class App
 	    jda.addEventListener(new CoinFlip());
 	    jda.addEventListener(new DiceRoll());
 	    jda.addEventListener(new WordGuess());
+	    jda.addEventListener(new DatabaseEvents());
 	}
 	
 	
