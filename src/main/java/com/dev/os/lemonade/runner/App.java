@@ -5,7 +5,6 @@ import javax.security.auth.login.LoginException;
 import com.dev.os.lemonade.db_manager.BotQueries;
 import com.dev.os.lemonade.db_manager.DatabaseEvents;
 import com.dev.os.lemonade.emotes.HelloEvent;
-import com.dev.os.lemonade.emotes.ImageSend;
 import com.dev.os.lemonade.emotes.MoodEvent;
 import com.dev.os.lemonade.games.CoinFlip;
 import com.dev.os.lemonade.games.DiceRoll;
@@ -41,7 +40,6 @@ public class App
 	    jda.addEventListener(new MoodEvent());
 	    jda.addEventListener(new AvatarEvent());
 	    jda.addEventListener(new ClearEvent());
-	    jda.addEventListener(new ImageSend());
 	    jda.addEventListener(new InfoEvent());
 	    jda.addEventListener(new CoinFlip());
 	    jda.addEventListener(new DiceRoll());
