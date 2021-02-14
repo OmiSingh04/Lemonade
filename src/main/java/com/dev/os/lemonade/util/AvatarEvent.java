@@ -12,9 +12,13 @@ public class AvatarEvent extends ListenerAdapter{
 		String message = event.getMessage().getContentRaw().toString().toUpperCase();
 		
 		if(message.startsWith(App.SERVER_PREFIX + "AVATAR")) {
-			message = message.substring(10);
-			String avatar = event.getMessage().getMentionedMembers().get(0).getUser().getAvatarUrl();
+			try {
+			String avatar = event.getMessage().getMentionedMembers(event.getGuild()).get(0).getUser().getAvatarUrl();
 			event.getChannel().sendMessage(avatar).queue();
+			}catch(IndexOutOfBoundsException e) {
+				String avatar = event.getAuthor().getAvatarUrl();
+				event.getChannel().sendMessage(avatar).queue();
+			}
 		}
 	}
 }
