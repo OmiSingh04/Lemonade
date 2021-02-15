@@ -29,7 +29,7 @@ public class PokemonWordGuess extends ListenerAdapter{
 		
 		if(message.startsWith(App.SERVER_PREFIX + "POKEMON")) {//if the player has just started the game
 			
-			int random = new Random().nextInt(2242);
+			int random = new Random().nextInt(705);
 			word = getWord("/txt/pokemon.txt",random);
 			word = word.toLowerCase();
 			System.out.println(word);
