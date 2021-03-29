@@ -30,7 +30,7 @@ public class App {
 	public static BotQueries BOT_QUERIES;
 
 	public static void main(String[] args) throws LoginException {
-		JDABuilder builder = JDABuilder.createDefault("Nzg2ODMwMTI3ODE1NTg5OTM4.X9MGqQ.Ou9qvkaP5N67O5uWwoVSxuS9LZ4");
+		JDABuilder builder = JDABuilder.createDefault("Get Your own token :)");
 
 		// Disable parts of the cache
 		builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
