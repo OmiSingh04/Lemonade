@@ -37,5 +37,7 @@ public class ClearEvent extends ListenerAdapter {
 				}
 			}
 		}
+		else
+			event.getChannel().sendMessage("Need Permission - MANAGE_CHANNEL").queue();
 	}
 }
