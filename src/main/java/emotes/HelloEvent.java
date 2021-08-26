@@ -22,9 +22,4 @@ public class HelloEvent extends ListenerAdapter {
 		}
 	}
 
-	public void onGuildMemberJoin(GuildMemberJoinEvent e) {
-		e.getMember();
-
-	}
-
 }

@@ -28,13 +28,6 @@ public class InfoEvent extends ListenerAdapter{
 			event.getChannel().sendMessage(info.build()).queue();
 			
 		}
-		else if(message.startsWith(App.SERVER_PREFIX + "SPAM"))
-		{
-			String name = event.getAuthor().getName().toString();
-			int n = Integer.parseInt(message.split(" ")[1]);
-			while(--n>=0)
-			event.getChannel().sendMessage(name).queue();
-		}
 		
 	}
 }

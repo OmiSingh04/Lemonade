@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class DiceRoll extends ListenerAdapter{
 
+	@SuppressWarnings("deprecation")
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
 		String message = event.getMessage().getContentRaw().toString().toUpperCase();
 		
